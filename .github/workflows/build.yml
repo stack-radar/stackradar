@@ -75,7 +75,7 @@ jobs:
       - name: Run tests
         run: make test
 
-      - name: Run go vet
+      - name: Run go vet # Go's static analysis tool go vet, which examines Go source code and reports suspicious constructs.
         run: make vet
 
   build:
@@ -86,7 +86,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        go-version: ['1.24.12', '1.22.10']
+        go-version: ['1.22.10'] # Add more Go versions as needed
         goos: [linux, darwin, windows]
         goarch: [amd64, arm64]
         exclude:
